@@ -1056,7 +1056,9 @@ function Library.CreateWindow(config)
             local screenW = ScreenGui.AbsoluteSize.X
             local mainRight = Main.AbsolutePosition.X + Main.AbsoluteSize.X
             local mainLeft = Main.AbsolutePosition.X
-            local y = Card.AbsolutePosition.Y
+            -- Align so the first option lines up with the dropdown box itself
+            -- (list top padding is 6px, so offset by that to compensate)
+            local y = Box.AbsolutePosition.Y - 6
 
             local x
             if mainRight + BOX_W <= screenW then
